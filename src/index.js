@@ -1,6 +1,5 @@
 import imagerestaurant from "./images/imagerestaurant.avif";
-import menuIndex from "../Menu/menuIndex";
-import { createMenuDiv } from "../Menu/menuIndex";
+import { foodMenu, createMenuDiv } from "../Menu/menuIndex";
 import { createHomeDiv } from "../home/homeIndex";
 import { createAboutDiv } from "../About/aboutIndex";
 console.log("webpack");
@@ -65,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnHome.addEventListener("click", () => {
     loadView(createHomeDiv());
     console.log("home");
+    console.log("div menu creation ", createMenuDiv());
   });
 
   btnAbout.addEventListener("click", () => {
@@ -72,8 +72,25 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("about");
   });
 
+  let menuFood = foodMenu();
+  let menuDiv = createMenuDiv();
+
+  console.log(menuFood);
   btnMenu.addEventListener("click", () => {
     loadView(createMenuDiv());
+    menuFood.forEach((elem) => {
+      const title = document.createElement("h4");
+      const spanPrice = document.createElement("span");
+      const imgBlock = document.createElement("img");
+      title.textContent = `${elem.name}`;
+      spanPrice.textContent = `${elem.price}`;
+      imgBlock.src = `${elem.image}`;
+      console.log(`${elem.image}`);
+      contentDiv.append(title);
+      contentDiv.append(spanPrice);
+      contentDiv.append(imgBlock);
+    });
+    console.log(menuFood);
     console.log("menu");
   });
 });
