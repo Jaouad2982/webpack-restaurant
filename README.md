@@ -1,4 +1,4 @@
-Webpack Restaurant 🍽️
+Webpack Restaurant 🍽️ 
 A modern, modular restaurant web application built with Webpack, allowing for scalable and maintainable frontend development using modular JavaScript components, styles, and assets.
 📝 Table of Contents
 About the Project
