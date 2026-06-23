@@ -1,7 +1,8 @@
 import imagerestaurant from "./images/imagerestaurant.avif";
 import { foodMenu, createMenuDiv } from "../Menu/menuIndex";
-import { createHomeDiv } from "../home/homeIndex";
 import { createAboutDiv } from "../About/aboutIndex";
+import { createHomeDiv } from "../home/homeIndex.js";
+import "./style.css";
 console.log("webpack");
 
 const headerTitle = document.createElement("h4");
