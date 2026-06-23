@@ -4,7 +4,6 @@ import { createAboutDiv } from "../About/aboutIndex";
 import { createHomeDiv } from "../home/homeIndex.js";
 import "./style.css";
 console.log("webpack");
-
 const headerTitle = document.createElement("h4");
 const paragraph = document.createElement("p");
 const img = document.createElement("img");
@@ -79,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(menuFood);
   btnMenu.addEventListener("click", () => {
+    const headerBtn = document.querySelector(".header-btn");
+    headerBtn.style.backgroundColor = "white";
+    headerBtn.style.border = "1px solid red";
     loadView(createMenuDiv());
     menuFood.forEach((elem) => {
       const imageDiv = document.createElement("div");
@@ -95,8 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(`${elem.image}`);
       titlePriceDiv.append(title);
       titlePriceDiv.append(spanPrice);
-      imageDiv.append(titlePriceDiv);
+      // imageDiv.append(titlePriceDiv);
       imageDiv.append(imgBlock);
+      contentDiv.append(titlePriceDiv);
       contentDiv.append(imageDiv);
       // contentDiv.append(title);
       // contentDiv.append(spanPrice);
