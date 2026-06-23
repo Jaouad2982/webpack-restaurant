@@ -35,6 +35,7 @@
   color: #342e2f;
   /* border-color: white; */
   border: none;
+  opacity: 0.5;
 }
 
 /* divHome homeIndex style */
@@ -95,4 +96,62 @@
   right: 20rem;
   border-color: white;
   color: #342e2f;
+}
+
+/* Menu MenuIndexjs style */
+
+.contentDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+}
+
+.contentDiv img {
+  width: 45%;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.imageDiv {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.titlePriceDiv {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: #342e2f;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.paragraphStyleMenu {
+  color: #342e2f;
+  opacity: 0.4;
+  font-size: 35px;
+  margin-top: 2rem;
+  display: inline-block;
+  width: 50rem;
+  left: 21rem;
+  /* line-height: 4rem;
+  letter-spacing: 1.1px; */
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.menuHeader {
+  font-size: 14rem;
+  opacity: 0.3;
 }

@@ -6,6 +6,7 @@ import sushi from "../src/images/sushi.avif";
 import steak from "../src/images/steak.avif";
 import tacos from "../src/images/tacos.avif";
 import icecream from "../src/images/icecream.avif";
+import "../src/style.css";
 
 // const foodMenu = [
 //   { name: "Pizza", price: "$8.99", img: pizzaImg },
@@ -22,7 +23,9 @@ function createMenuDiv() {
   console.log("menu");
   const divMenu = document.createElement("div");
   const paragraph = document.createElement("p");
+  paragraph.classList.add("paragraphStyleMenu");
   const headerTitle = document.createElement("h4");
+  headerTitle.classList.add("menuHeader");
   headerTitle.textContent = "Menu";
   paragraph.textContent =
     "paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam voluptatum quas numquam perspiciatis sequi facere fuga, nihil dignissimos! Incidunt.";

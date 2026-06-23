@@ -53,6 +53,7 @@ contentDiv.append(paragraph);
 
 function loadView(viewElement) {
   const contentDiv = document.getElementById("content");
+  contentDiv.classList.add("contentDiv");
   contentDiv.innerHTML = ""; // clear old content
   contentDiv.appendChild(viewElement);
 }
@@ -80,16 +81,26 @@ document.addEventListener("DOMContentLoaded", () => {
   btnMenu.addEventListener("click", () => {
     loadView(createMenuDiv());
     menuFood.forEach((elem) => {
+      const imageDiv = document.createElement("div");
+      const titlePriceDiv = document.createElement("div");
+      titlePriceDiv.classList.add("titlePriceDiv");
+      imageDiv.classList.add("imageDiv");
       const title = document.createElement("h4");
+      title.classList.add("title");
       const spanPrice = document.createElement("span");
       const imgBlock = document.createElement("img");
       title.textContent = `${elem.name}`;
       spanPrice.textContent = `${elem.price}`;
       imgBlock.src = `${elem.image}`;
       console.log(`${elem.image}`);
-      contentDiv.append(title);
-      contentDiv.append(spanPrice);
-      contentDiv.append(imgBlock);
+      titlePriceDiv.append(title);
+      titlePriceDiv.append(spanPrice);
+      imageDiv.append(titlePriceDiv);
+      imageDiv.append(imgBlock);
+      contentDiv.append(imageDiv);
+      // contentDiv.append(title);
+      // contentDiv.append(spanPrice);
+      // contentDiv.append(imgBlock);
     });
     console.log(menuFood);
     console.log("menu");
