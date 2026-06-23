@@ -3,7 +3,6 @@ import { foodMenu, createMenuDiv } from "../Menu/menuIndex";
 import { createAboutDiv } from "../About/aboutIndex";
 import { createHomeDiv } from "../home/homeIndex.js";
 import "./style.css";
-console.log("webpack");
 const headerTitle = document.createElement("h4");
 const paragraph = document.createElement("p");
 const img = document.createElement("img");
@@ -13,10 +12,6 @@ headerTitle.textContent = "Restaurant";
 paragraph.textContent =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam voluptatum quas numquam perspiciatis sequi facere fuga, nihil dignissimos! Incidunt.";
 img.src = imagerestaurant;
-img.alt = "restaurant";
-img.style.backgroundPosition = "center";
-img.style.backgroundSize = "cover";
-img.style.width = "100%";
 
 contentDiv.append(headerTitle);
 contentDiv.append(img);
@@ -57,30 +52,31 @@ function loadView(viewElement) {
   contentDiv.appendChild(viewElement);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (e) => {
+  // if (e.event.textContent == "About") {
+  //   console.log("about");
+  // } else if (e.event.textContent == "Menu") {
+  //   console.log("menu");
+  // } else if (e.event.textContent == "home") {
+  //   console.log("home");
+  // }
   const btnHome = document.getElementById("homeBtn");
   const contentDiv = document.getElementById("content");
   const btnAbout = document.getElementById("aboutBtn");
   const btnMenu = document.getElementById("menuBtn");
-  btnHome.addEventListener("click", () => {
+  btnHome.addEventListener("click", (e) => {
     loadView(createHomeDiv());
-    console.log("home");
-    console.log("div menu creation ", createMenuDiv());
   });
 
   btnAbout.addEventListener("click", () => {
     loadView(createAboutDiv());
-    console.log("about");
   });
 
   let menuFood = foodMenu();
   let menuDiv = createMenuDiv();
 
-  console.log(menuFood);
   btnMenu.addEventListener("click", () => {
     const headerBtn = document.querySelector(".header-btn");
-    headerBtn.style.backgroundColor = "white";
-    headerBtn.style.border = "1px solid red";
     loadView(createMenuDiv());
     menuFood.forEach((elem) => {
       const imageDiv = document.createElement("div");
@@ -94,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
       title.textContent = `${elem.name}`;
       spanPrice.textContent = `${elem.price}`;
       imgBlock.src = `${elem.image}`;
-      console.log(`${elem.image}`);
       titlePriceDiv.append(title);
       titlePriceDiv.append(spanPrice);
       // imageDiv.append(titlePriceDiv);
@@ -105,7 +100,5 @@ document.addEventListener("DOMContentLoaded", () => {
       // contentDiv.append(spanPrice);
       // contentDiv.append(imgBlock);
     });
-    console.log(menuFood);
-    console.log("menu");
   });
 });
